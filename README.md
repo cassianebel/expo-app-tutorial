@@ -31,7 +31,7 @@ This app uses the camera and OCR features, so it should be tested as a native An
 ## Clone and install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/cassianebel/expo-app-tutorial.git
 cd expo-app-tutorial
 npm install
 ```
