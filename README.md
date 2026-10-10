@@ -1,56 +1,155 @@
-# Welcome to your Expo app 👋
+# Expo App Tutorial
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This app uses the camera and OCR features, so it should be tested as a native Android or iOS app. Plain Expo Go is not the recommended workflow for this project.
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+### Required for everyone
 
-   ```bash
-   npm install
-   ```
+- Node.js LTS
+- npm
+- Git
+- VS Code or another code editor
 
-2. Start the app
+### Required for Android
 
-   ```bash
-   npx expo start
-   ```
+- Android Studio
+- Android SDK
+- An Android emulator or a physical Android device
+- USB debugging enabled on the physical device
 
-In the output, you'll find options to open the app in a
+### Required for iPhone
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- A Mac computer
+- Xcode
+- iOS simulator or a physical iPhone
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+> This app depends on native camera access and OCR functionality, so testing must be done on a real mobile environment rather than a browser-only workflow.
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## Clone and install
 
 ```bash
-npm run reset-project
+git clone <your-repo-url>
+cd expo-app-tutorial
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## Android: run as a native app
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Option 1: Android emulator
 
-## Learn more
+1. Install Android Studio.
+2. Open Android Studio and create a virtual device.
+3. Start the emulator.
+4. In the project folder, run:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npx expo run:android
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+This builds the native Android app and launches it in the emulator.
 
-## Join the community
+### Option 2: Physical Android device
 
-Join our community of developers creating universal apps.
+1. Enable Developer Options on the phone.
+2. Enable USB debugging.
+3. Connect the phone to your computer.
+4. Run:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npx expo run:android
+```
+
+The app will install and run on the connected Android device.
+
+### Android notes
+
+- This is the recommended Android test path for the camera and OCR features.
+- Expo Go is not the best choice for the final test workflow here.
+
+---
+
+## Apple (iOS): run as a native app
+
+### Requirements
+
+- macOS
+- Xcode installed from the App Store
+- iOS simulator or a physical iPhone
+
+### Option 1: iOS simulator
+
+1. Open the project in a terminal.
+2. Run:
+
+```bash
+npx expo run:ios
+```
+
+3. Xcode will build the app and launch it in the simulator.
+
+### Option 2: Physical iPhone
+
+1. Connect the iPhone to your Mac.
+2. Trust the computer on the device if prompted.
+3. Run:
+
+```bash
+npx expo run:ios
+```
+
+This installs the app on the connected iPhone.
+
+### iOS notes
+
+- iOS development requires a Mac.
+- Native camera and OCR testing should be done through the proper iOS build workflow, not through a browser-based shortcut.
+
+---
+
+## Recommended testing workflow
+
+Use the native app workflow on the device you are testing with:
+
+```bash
+npx expo run:android
+```
+
+or
+
+```bash
+npx expo run:ios
+```
+
+This is the correct method for testing the camera and OCR behavior in this project.
+
+---
+
+## Useful commands
+
+```bash
+npm install
+npx expo run:android
+npx expo run:ios
+npx expo lint
+```
+
+---
+
+## Troubleshooting
+
+- If dependencies are missing: run `npm install`
+- If Android does not detect a device: check USB debugging and the emulator state
+- If iOS does not run: make sure Xcode is installed and the simulator is available
+- If the camera fails: allow camera permissions when the app asks
+- If OCR does not work: test on a native app build, not a browser-only environment
+
+---
+
+## License
+
+This project is for educational use unless another license is specified.
